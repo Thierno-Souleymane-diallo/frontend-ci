@@ -32,6 +32,12 @@ pipeline {
                 }
             }
         }
+        stage('Declencher le deploiement') {
+            steps {
+                build job: 'sunusante-cd', wait: false,
+                      parameters: [string(name: 'FRONTEND_TAG', value: "${IMAGE_TAG}")]
+            }
+        }
     }
 
     post {
