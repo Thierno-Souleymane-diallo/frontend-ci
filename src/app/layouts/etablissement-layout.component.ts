@@ -45,6 +45,6 @@ export class EtablissementLayoutComponent {
 
   sortir(): void {
     this.auth.logout();
-    this.router.navigateByUrl('/etablissement/connexion/');
+    this.router.navigateByUrl('/etablissement/connexion');
   }
 }

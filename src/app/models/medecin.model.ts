@@ -7,5 +7,7 @@ export interface Medecin {
   specialite: string;
   telephone?: string;
   etablissement?: Etablissement;
+  etablissementId?: number;
+  etablissementNom?: string;
   createdAt?: string;
 }

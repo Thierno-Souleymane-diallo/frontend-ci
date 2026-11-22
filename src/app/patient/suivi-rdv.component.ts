@@ -47,8 +47,8 @@ import { classeStatut, libelleStatut } from '../shared/statut';
                   <span>{{ r.dateHeure | date: 'HH:mm' }}</span>
                 </div>
                 <div class="sn-rdv__body">
-                  <h3>Dr {{ r.medecin.prenom }} {{ r.medecin.nom }}</h3>
-                  <p class="sn-muted">{{ r.medecin.specialite }}@if (r.medecin.etablissement?.nom) { · {{ r.medecin.etablissement?.nom }} }</p>
+                  <h3>Dr {{ r.medecin ? (r.medecin.prenom + ' ' + r.medecin.nom) : r.medecinNom }}</h3>
+                  <p class="sn-muted">{{ r.medecin?.specialite ?? r.medecinSpecialite }}@if (r.medecin?.etablissement?.nom ?? r.etablissementNom; as etabNom) { · {{ etabNom }} }</p>
                   @if (r.motif) { <p>{{ r.motif }}</p> }
                 </div>
                 <span [class]="'sn-badge ' + classeStatut(r.statut)">{{ libelleStatut(r.statut) }}</span>

@@ -98,6 +98,7 @@ export class EtablissementsListComponent implements OnInit {
   readonly types = [
     { valeur: '', libelle: 'Tous' },
     { valeur: 'HOPITAL', libelle: 'Hôpitaux' },
+    { valeur: 'CLINIQUE', libelle: 'Cliniques' },
     { valeur: 'CENTRE_DE_SANTE', libelle: 'Centres de santé' },
     { valeur: 'POSTE_DE_SANTE', libelle: 'Postes de santé' },
   ];

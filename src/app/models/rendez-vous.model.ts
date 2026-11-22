@@ -9,7 +9,12 @@ export interface RendezVous {
   dateHeure: string; // Stocké sous format ISO string (LocalDateTime)
   motif?: string;
   statut?: StatutRendezVous;
-  medecin: Medecin;
+  medecin?: Medecin;
+  medecinId?: number;
+  medecinNom?: string;
+  medecinSpecialite?: string;
+  etablissementId?: number;
+  etablissementNom?: string;
   createdAt?: string;
   updatedAt?: string;
 }

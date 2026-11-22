@@ -24,8 +24,11 @@ export function classeStatut(s: StatutRendezVous | undefined): string {
 export function libelleType(t: TypeEtablissement | string | undefined): string {
   switch (t) {
     case 'HOPITAL': return 'Hôpital';
+    case 'CENTRE_DE_SANTE':
     case 'CENTRE_SANTE': return 'Centre de santé';
+    case 'POSTE_DE_SANTE':
     case 'POSTE_SANTE': return 'Poste de santé';
+    case 'CLINIQUE': return 'Clinique';
     default: return t ?? '';
   }
 }

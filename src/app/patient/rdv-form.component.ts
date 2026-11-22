@@ -49,7 +49,7 @@ type Champ = 'nomPatient' | 'telephonePatient' | 'dateHeure' | 'motif';
         </div>
       } @else {
         @if (medecin(); as m) {
-          <a [routerLink]="['/patient/etablissements', m.etablissement?.id ?? etabId, 'medecins']" class="sn-back">← Retour aux médecins</a>
+          <a [routerLink]="['/patient/etablissements', m.etablissement?.id ?? m.etablissementId ?? etabId, 'medecins']" class="sn-back">← Retour aux médecins</a>
           <header class="sn-pagehead">
             <h1>Réserver un rendez-vous</h1>
           </header>
@@ -179,6 +179,7 @@ export class RdvFormComponent implements OnInit {
       dateHeure: v.dateHeure.length === 16 ? `${v.dateHeure}:00` : v.dateHeure,
       motif: v.motif.trim(),
       statut: 'EN_ATTENTE',
+      medecinId: m.id,
       medecin: { id: m.id } as Medecin,
     };
 

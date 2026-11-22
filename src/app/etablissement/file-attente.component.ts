@@ -171,11 +171,14 @@ export class FileAttenteComponent implements OnInit, OnDestroy {
   }
 
   nomMedecin(r: RendezVous): string {
-    return r.medecin ? `Dr ${r.medecin.prenom} ${r.medecin.nom}` : '—';
+    if (r.medecin?.prenom || r.medecin?.nom) {
+      return `Dr ${r.medecin.prenom ?? ''} ${r.medecin.nom ?? ''}`.trim();
+    }
+    return r.medecinNom ? `Dr ${r.medecinNom}` : '—';
   }
 
   specialiteMedecin(r: RendezVous): string {
-    return r.medecin ? r.medecin.specialite : '';
+    return r.medecin?.specialite ?? r.medecinSpecialite ?? '';
   }
 
   basculer(f: StatutRendezVous): void {
