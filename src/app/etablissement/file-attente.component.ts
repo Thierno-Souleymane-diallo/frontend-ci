@@ -69,6 +69,7 @@ const RANG: Record<StatutRendezVous, number> = { EN_CONSULTATION: 0, EN_ATTENTE:
                    [class.is-done]="statutDe(r) === 'TERMINE' || statutDe(r) === 'ANNULE'">
             <div class="sn-qrow__time">
               <strong>{{ r.dateHeure | date: 'HH:mm' }}</strong>
+              <small>{{ r.dateHeure | date: 'dd/MM/yyyy' }}</small>
               @if (positions().get(r.id ?? -1); as p) { <small>N° {{ p }}</small> }
             </div>
 
